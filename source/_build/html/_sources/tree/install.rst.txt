@@ -1,0 +1,42 @@
+Installation
+============
+
+There are two ways to install manim. Either using pip or the github repository.
+
+.. note:: 
+    One may use Docker as well, but I believe most of us rather wouldn't. If you're interested in using the Docker image, please see the steps in the `repo's README <https://github.com/3b1b/manim/blob/master/README.md>`_.
+
+
+Prerequisites
+-------------
+
+Manim requires `cairo`_, `latex`_, `sox`_ and `ffmpeg`_. See how to install each of them `here`_.
+
+.. _cairo: https://www.cairographics.org
+.. _latex: https://www.latex-project.org
+.. _sox: http://sox.sourceforge.net
+.. _ffmpeg: https://www.ffmpeg.org
+.. _here: https://github.com/3b1b/manim/blob/master/README.md
+
+Method 1: Using pip
+-------------------
+
+.. code-block::
+
+    [py|python|python3 -m] pip install manimlib
+
+The PyPI version allows you to call manim using the ``manim`` command but the tradeoff is that it's less frequently updated and thus you won't have new features if added (``Text``,for example).
+
+Method 2: From the GitHub repo
+------------------------------
+
+Manim is hosted `here <https://github.com/3b1b/manim>`_. Download or `clone <https://www.wikihow.com/Clone-a-Repository-on-Github>`_ it to wherever you'd like to.
+Now run the following command while in the manim folder:
+
+.. code-block::
+
+    [py|python|python3 -m] pip install -r requirements.txt
+
+This'll install all of manim's dependencies.
+
+

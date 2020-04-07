@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Installation &#8212; Manim 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>There are two ways to install manim. Either using pip or the github repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One may use Docker as well, but I believe most of us rather wouldn’t. If you’re interested in using the Docker image, please see the steps in the <a class="reference external" href="https://github.com/3b1b/manim/blob/master/README.md">repo’s README</a>.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Manim requires <a class="reference external" href="https://www.cairographics.org">cairo</a>, <a class="reference external" href="https://www.latex-project.org">latex</a>, <a class="reference external" href="http://sox.sourceforge.net">sox</a> and <a class="reference external" href="https://www.ffmpeg.org">ffmpeg</a>. See how to install each of them <a href="#id2"><span class="problematic" id="id3">`here`_</span></a>.</p>
+</div>
+<div class="section" id="method-1-using-pip">
+<h2>Method 1: Using pip<a class="headerlink" href="#method-1-using-pip" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">py</span><span class="o">|</span><span class="n">python</span><span class="o">|</span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span><span class="p">]</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">manimlib</span>
+</pre></div>
+</div>
+<p>The PyPI version allows you to call manim using the <code class="docutils literal notranslate"><span class="pre">manim</span></code> command but the tradeoff is that it’s less frequently updated and thus you won’t have new features if added (<code class="docutils literal notranslate"><span class="pre">Text</span></code>,for example).</p>
+</div>
+<div class="section" id="method-2-from-the-github-repo">
+<h2>Method 2: From the GitHub repo<a class="headerlink" href="#method-2-from-the-github-repo" title="Permalink to this headline">¶</a></h2>
+<p>Manim is hosted <a class="reference external" href="https://github.com/3b1b/manim">here</a>. Download or <a class="reference external" href="https://www.wikihow.com/Clone-a-Repository-on-Github">clone</a> it to wherever you’d like to.
+Now run the following command while in the manim folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">py</span><span class="o">|</span><span class="n">python</span><span class="o">|</span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span><span class="p">]</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This’ll install all of manim’s dependencies.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Manim</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, KilaCoda.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/tree/install.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

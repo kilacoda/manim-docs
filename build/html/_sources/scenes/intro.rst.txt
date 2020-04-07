@@ -1,0 +1,28 @@
+Scenes
+======
+
+`The canvases for your videos.`
+
+Here's a quick rundown of how manim processes videos:
+
+1. Check if the provided class derives from ``Scene``
+2. Execute the ``digest_config`` function to associate parameters
+   for the scene
+3. Execute the ``construct`` function and render whatever's in it.
+
+
+This is the basic structure of a manim scene::
+    
+    class Scene_Name(scene_type_to_derive_from):
+        CONFIG = {
+        ## parameters to be set
+        }
+
+        def construct(self):
+            ## animation code
+
+where ``scene_type_to_derive_from`` is something like
+``Scene``, ``GraphScene``, ``ThreeDScene`` or even your own
+self created Scene class. The point is that we want all the
+functionality provided by the ``Scene`` class, and to customise
+it as per our requirements.

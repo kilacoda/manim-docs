@@ -1,0 +1,11 @@
+
+    What can be considered to be the 'canvas' for your animations.\n
+    
+    Manim processes videos as follows:
+
+    1. Get classes deriving from ``Scene``.
+
+    2. Execute the ``digest_config`` function to associate parameters
+    for the scene.
+
+    3. Execute the ``construct`` function and render whatever's in it.

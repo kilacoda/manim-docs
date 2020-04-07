@@ -1,0 +1,7 @@
+manimlib
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   manimlib

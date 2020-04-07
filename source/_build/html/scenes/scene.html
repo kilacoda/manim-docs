@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scene &mdash; Manim 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../running.html">Running Manim projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenes.html">Scenes - What are they?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenes.html#scene">Scene</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Scene</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/scenes/scene.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scene">
+<h1>Scene<a class="headerlink" href="#scene" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="manimlib.scene.scene.Scene">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.scene.scene.</code><code class="sig-name descname">Scene</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class contains lots of useful functions, though most of the time
+you’ll be fine with only <code class="docutils literal notranslate"><span class="pre">Scene.play()</span></code> and <code class="docutils literal notranslate"><span class="pre">Scene.wait()</span></code></p>
+<ul class="simple">
+<li><p>camera_class</p></li>
+<li><p>camera_config</p></li>
+<li><p>file_writer_config</p></li>
+<li><p>skip_animations</p></li>
+<li><p>always_update_mobjects</p></li>
+<li><p>random_seed</p></li>
+<li><p>start_at_animation_number</p></li>
+<li><p>end_at_animation_number</p></li>
+<li><p>leave_progress_bars</p></li>
+</ul>
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">*mobjects</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mobjects will be displayed, from background to
+foreground in the order with which they are added.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.add_mobjects_among">
+<code class="sig-name descname">add_mobjects_among</code><span class="sig-paren">(</span><em class="sig-param">values</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.add_mobjects_among" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is meant mostly for quick prototyping,
+e.g. to add all mobjects defined up to a point,
+call self.add_mobjects_among(locals().values())</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.compile_play_args_to_animation_list">
+<code class="sig-name descname">compile_play_args_to_animation_list</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.compile_play_args_to_animation_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Each arg can either be an animation, or a mobject method
+followed by that methods arguments (and potentially follow
+by a dict of kwargs for that method).
+This animation list is built by going through the args list,
+and each animation is simply added, but when a mobject method
+s hit, a MoveToTarget animation is built using the args that
+follow up until either another animation is hit, another method
+is hit, or the args list runs out.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.restructure_mobjects">
+<code class="sig-name descname">restructure_mobjects</code><span class="sig-paren">(</span><em class="sig-param">to_remove</em>, <em class="sig-param">mobject_list_name='mobjects'</em>, <em class="sig-param">extract_families=True</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.restructure_mobjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>In cases where the scene contains a group, e.g. Group(m1, m2, m3), but one
+of its submobjects is removed, e.g. scene.remove(m1), the list of mobjects
+will be editing to contain other submobjects, but not m1, e.g. it will now
+insert m2 and m3 to where the group once was.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.set_variables_as_attrs">
+<code class="sig-name descname">set_variables_as_attrs</code><span class="sig-paren">(</span><em class="sig-param">*objects</em>, <em class="sig-param">**newly_named_objects</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.set_variables_as_attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is slightly hacky, making it a little easier
+for certain methods (typically subroutines of construct)
+to share local variables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is meant to be implement by any scenes which
+are comonly subclassed, and have some common setup
+involved before the construct method is called.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, KilaCoda
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

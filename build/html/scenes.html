@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scenes &mdash; Manim 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Running Manim projects" href="running.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Manim
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">Running Manim projects</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scenes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scene">Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graph-scene">Graph Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d-scene">3-D Scene</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Manim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Scenes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/scenes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scenes">
+<h1>Scenes<a class="headerlink" href="#scenes" title="Permalink to this headline">¶</a></h1>
+<p>Scenes are what can be considered the <cite>canvases</cite> for your animations. All scenes
+are derived from the <code class="docutils literal notranslate"><span class="pre">Scene</span></code> class, which in itself is derived from the
+<code class="docutils literal notranslate"><span class="pre">Container</span></code> class.</p>
+<p>Here’s a quick rundown of how manim processes videos:</p>
+<ol class="arabic simple">
+<li><p>Get classes deriving from <code class="docutils literal notranslate"><span class="pre">Scene</span></code>.</p></li>
+<li><p>Execute the <code class="docutils literal notranslate"><span class="pre">digest_config</span></code> function to associate parameters for the scene.</p></li>
+<li><p>Execute the scene’s <code class="docutils literal notranslate"><span class="pre">construct</span></code> function and render whatever’s in it.</p></li>
+</ol>
+<p>Let’s take a look at the pre-defined scenes in manim. (Yes you can create your
+own as well!)</p>
+<div class="section" id="scene">
+<h2>Scene<a class="headerlink" href="#scene" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.scene.scene.Scene">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.scene.scene.</code><code class="sig-name descname">Scene</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>The base class for all scenes.</cite></p>
+<p>This class contains lots of useful functions, though most of the time
+you’ll be fine with only <code class="docutils literal notranslate"><span class="pre">Scene.play()</span></code> and <code class="docutils literal notranslate"><span class="pre">Scene.wait()</span></code></p>
+<p><strong>CONFIG Parameters</strong></p>
+<ul class="simple">
+<li><p>camera_class</p></li>
+<li><p>camera_config</p></li>
+<li><p>file_writer_config</p></li>
+<li><p>skip_animations</p></li>
+<li><p>always_update_mobjects</p></li>
+<li><p>random_seed</p></li>
+<li><p>start_at_animation_number</p></li>
+<li><p>end_at_animation_number</p></li>
+<li><p>leave_progress_bars</p></li>
+</ul>
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">*mobjects</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mobjects will be displayed, from background to
+foreground in the order with which they are added.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.add_mobjects_among">
+<code class="sig-name descname">add_mobjects_among</code><span class="sig-paren">(</span><em class="sig-param">values</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.add_mobjects_among" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is meant mostly for quick prototyping,
+e.g. to add all mobjects defined up to a point,
+call self.add_mobjects_among(locals().values())</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.add_sound">
+<code class="sig-name descname">add_sound</code><span class="sig-paren">(</span><em class="sig-param">sound_file</em>, <em class="sig-param">time_offset=0</em>, <em class="sig-param">gain=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.add_sound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play the <code class="docutils literal notranslate"><span class="pre">sound_file</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.compile_play_args_to_animation_list">
+<code class="sig-name descname">compile_play_args_to_animation_list</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.compile_play_args_to_animation_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Each arg can either be an animation, or a mobject method
+followed by that methods arguments (and potentially follow
+by a dict of kwargs for that method).
+This animation list is built by going through the args list,
+and each animation is simply added, but when a mobject method
+s hit, a MoveToTarget animation is built using the args that
+follow up until either another animation is hit, another method
+is hit, or the args list runs out.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.construct">
+<code class="sig-name descname">construct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.construct" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function looked for by manim while rendering a Scene.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.get_animation_time_progression">
+<code class="sig-name descname">get_animation_time_progression</code><span class="sig-paren">(</span><em class="sig-param">animations</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_animation_time_progression" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method defining the ProgressBar you see on a render.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.get_moving_mobjects">
+<code class="sig-name descname">get_moving_mobjects</code><span class="sig-paren">(</span><em class="sig-param">*animations</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_moving_mobjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Go through mobjects from start to end, and
+as soon as there’s one that needs updating of
+some kind per frame, return the list from that
+point forward.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.get_time">
+<code class="sig-name descname">get_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.get_time_progression">
+<code class="sig-name descname">get_time_progression</code><span class="sig-paren">(</span><em class="sig-param">run_time</em>, <em class="sig-param">n_iterations=None</em>, <em class="sig-param">override_skip_animations=False</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_time_progression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used by the renderer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.get_top_level_mobjects">
+<code class="sig-name descname">get_top_level_mobjects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.get_top_level_mobjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return only those which are not in the family
+of another mobject from the scene</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.handle_play_like_call">
+<code class="sig-name descname">handle_play_like_call</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.handle_play_like_call" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for implementing <code class="docutils literal notranslate"><span class="pre">Scene.play()</span></code> and <code class="docutils literal notranslate"><span class="pre">Scene.wait()</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.print_end_message">
+<code class="sig-name descname">print_end_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.print_end_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>The message one sees at the end of a render.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.progress_through_animations">
+<code class="sig-name descname">progress_through_animations</code><span class="sig-paren">(</span><em class="sig-param">animations</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.progress_through_animations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paint all non-moving objects onto the screen, so they don’t
+have to be rendered every frame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param">*mobjects</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>To remove Mobjects in the reverse order they were <a href="#id1"><span class="problematic" id="id2">``</span></a>Scene.add``ed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.restructure_mobjects">
+<code class="sig-name descname">restructure_mobjects</code><span class="sig-paren">(</span><em class="sig-param">to_remove</em>, <em class="sig-param">mobject_list_name='mobjects'</em>, <em class="sig-param">extract_families=True</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.restructure_mobjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>In cases where the scene contains a group, e.g. Group(m1, m2, m3), but one
+of its submobjects is removed, e.g. scene.remove(m1), the list of mobjects
+will be editing to contain other submobjects, but not m1, e.g. it will now
+insert m2 and m3 to where the group once was.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.set_variables_as_attrs">
+<code class="sig-name descname">set_variables_as_attrs</code><span class="sig-paren">(</span><em class="sig-param">*objects</em>, <em class="sig-param">**newly_named_objects</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.set_variables_as_attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is slightly hacky, making it a little easier
+for certain methods (typically subroutines of construct)
+to share local variables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.scene.Scene.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.scene.Scene.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is meant to be implement by any scenes which
+are comonly subclassed, and have some common setup
+involved before the construct method is called.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="graph-scene">
+<h2>Graph Scene<a class="headerlink" href="#graph-scene" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.scene.graph_scene.GraphScene">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.scene.graph_scene.</code><code class="sig-name descname">GraphScene</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a customizable Cartesian (x-y) axis system.
+Used mainly to draw algebraic plots.</p>
+<p>If you’re looking for the blue gridded plane shown in 3Blue1Brown’s videos,
+see:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NumberPlane</span></code> (manimlib.mobject.coordinate_systems.NumberPlane)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LinearTransformationScene</span></code> (manimlib.scene.vector_space_scene.LinearTransformationScene)</p></li>
+</ol>
+<p><strong>CONFIG Parameters</strong></p>
+<ul class="simple">
+<li><p>x_min</p></li>
+<li><p>x_max</p></li>
+<li><p>x_axis_width</p></li>
+<li><p>x_tick_frequency</p></li>
+<li><p>x_leftmost_tick</p></li>
+<li><p>x_labeled_nums</p></li>
+<li><p>x_axis_label</p></li>
+<li><p>y_min</p></li>
+<li><p>y_max</p></li>
+<li><p>y_axis_height</p></li>
+<li><p>y_tick_frequency</p></li>
+<li><p>y_bottom_tick</p></li>
+<li><p>y_labeled_nums</p></li>
+<li><p>y_axis_label</p></li>
+<li><p>axes_color</p></li>
+<li><p>graph_origin</p></li>
+<li><p>exclude_zero_label</p></li>
+<li><p>default_graph_colors</p></li>
+<li><p>default_derivative_color</p></li>
+<li><p>default_input_color</p></li>
+<li><p>default_riemann_start_color</p></li>
+<li><p>default_riemann_end_color</p></li>
+<li><p>area_opacity</p></li>
+<li><p>num_rects</p></li>
+</ul>
+<dl class="method">
+<dt id="manimlib.scene.graph_scene.GraphScene.coords_to_point">
+<code class="sig-name descname">coords_to_point</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.coords_to_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.graph_scene.GraphScene.get_secant_slope_group">
+<code class="sig-name descname">get_secant_slope_group</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">graph</em>, <em class="sig-param">dx=None</em>, <em class="sig-param">dx_line_color=None</em>, <em class="sig-param">df_line_color=None</em>, <em class="sig-param">dx_label=None</em>, <em class="sig-param">df_label=None</em>, <em class="sig-param">include_secant_line=True</em>, <em class="sig-param">secant_line_color=None</em>, <em class="sig-param">secant_line_length=10</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.get_secant_slope_group" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Resulting group is of the form VGroup(</dt><dd><p>dx_line,
+df_line,
+dx_label, (if applicable)
+df_label, (if applicable)
+secant_line, (if applicable)</p>
+</dd>
+</dl>
+<p>)
+with attributes of those names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.graph_scene.GraphScene.setup">
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is meant to be implement by any scenes which
+are comonly subclassed, and have some common setup
+involved before the construct method is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manimlib.scene.graph_scene.GraphScene.setup_axes">
+<code class="sig-name descname">setup_axes</code><span class="sig-paren">(</span><em class="sig-param">animate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.graph_scene.GraphScene.setup_axes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates two axes according to the parameters in CONFIG</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="d-scene">
+<h2>3-D Scene<a class="headerlink" href="#d-scene" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="manimlib.scene.three_d_scene.ThreeDScene">
+<em class="property">class </em><code class="sig-prename descclassname">manimlib.scene.three_d_scene.</code><code class="sig-name descname">ThreeDScene</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.three_d_scene.ThreeDScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a three-dimensional space with customizable x,y and z axes.</p>
+<p>Mostly used for drawing <cite>ParametricSurface</cite>, <cite>Vector</cite>
+and <cite>ParametricFunction</cite>.</p>
+<p><strong>CONFIG Parameters</strong></p>
+<ul class="simple">
+<li><p>camera_class</p></li>
+<li><p>ambient_camera_rotation</p></li>
+<li><p>default_angled_camera_orientation_kwargs</p></li>
+</ul>
+<dl class="method">
+<dt id="manimlib.scene.three_d_scene.ThreeDScene.get_moving_mobjects">
+<code class="sig-name descname">get_moving_mobjects</code><span class="sig-paren">(</span><em class="sig-param">*animations</em><span class="sig-paren">)</span><a class="headerlink" href="#manimlib.scene.three_d_scene.ThreeDScene.get_moving_mobjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Go through mobjects from start to end, and
+as soon as there’s one that needs updating of
+some kind per frame, return the list from that
+point forward.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="running.html" class="btn btn-neutral float-left" title="Running Manim projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, KilaCoda
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

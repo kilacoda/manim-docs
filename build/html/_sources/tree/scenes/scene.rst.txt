@@ -1,0 +1,6 @@
+The Scene Class
+===============
+
+.. autoclass:: scene.scene.Scene
+
+

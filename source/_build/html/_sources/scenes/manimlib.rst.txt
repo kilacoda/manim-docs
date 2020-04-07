@@ -1,0 +1,54 @@
+manimlib package
+================
+
+Submodules
+----------
+
+manimlib.config module
+----------------------
+
+.. automodule:: manimlib.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+manimlib.constants module
+-------------------------
+
+.. automodule:: manimlib.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+manimlib.extract\_scene module
+------------------------------
+
+.. automodule:: manimlib.extract_scene
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+manimlib.imports module
+-----------------------
+
+.. automodule:: manimlib.imports
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+manimlib.stream\_starter module
+-------------------------------
+
+.. automodule:: manimlib.stream_starter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: manimlib
+   :members:
+   :undoc-members:
+   :show-inheritance:
