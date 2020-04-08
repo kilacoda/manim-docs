@@ -1,7 +1,7 @@
-vector\_space\_scene module
-===========================
+.. vector\_space\_scene module
+.. ===========================
 
-.. automodule:: vector_space_scene
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. .. automodule:: vector_space_scene
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:

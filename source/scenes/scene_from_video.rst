@@ -1,7 +1,7 @@
-scene\_from\_video module
-=========================
+.. scene\_from\_video module
+.. =========================
 
-.. automodule:: scene_from_video
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. .. automodule:: scene_from_video
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:

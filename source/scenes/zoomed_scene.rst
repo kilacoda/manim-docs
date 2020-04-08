@@ -1,7 +1,7 @@
-zoomed\_scene module
-====================
+.. zoomed\_scene module
+.. ====================
 
-.. automodule:: zoomed_scene
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. .. automodule:: zoomed_scene
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:

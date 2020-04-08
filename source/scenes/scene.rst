@@ -1,8 +1,8 @@
-Scene
-=====
+.. Scene
+.. =====
 
-.. autoclass:: manimlib.scene.scene.Scene
-    :members:
+.. .. autoclass:: manimlib.scene.scene.Scene
+..     :members:
 
 
 

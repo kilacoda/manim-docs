@@ -1,7 +1,7 @@
-graph\_scene module
-===================
+.. graph\_scene module
+.. ===================
 
-.. automodule:: graph_scene
-   :members:
-..    :undoc-members:
-   :show-inheritance:
+.. .. automodule:: graph_scene
+..    :members:
+.. ..    :undoc-members:
+..    :show-inheritance:
