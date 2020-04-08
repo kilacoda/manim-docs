@@ -20,6 +20,7 @@ project = 'Manim'
 copyright = '2020, KilaCoda'
 author = 'KilaCoda'
 
+master_doc = "index"
 # The full version, including alpha/beta/rc tags
 release = '0.1'
 
