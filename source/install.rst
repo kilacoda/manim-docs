@@ -24,7 +24,6 @@ Method 1: Using pip
 -------------------
 
 .. code-block::
-
     [py|python|python3 -m] pip install manimlib
 
 The PyPI version allows you to call manim using the ``manim`` command but the
